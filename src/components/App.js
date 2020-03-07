@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-// import { handleReceiveQuestions } from '../actions/questions'
 import { handleReceiveUsers } from '../actions/users'
-import Login from './Login'
+// import Login from './Login'
+import Main from './Main'
 
 class App extends Component {
   componentDidMount () {
     const { dispatch } = this.props
-    // dispatch(handleReceiveQuestions())
     dispatch(handleReceiveUsers())
   }
 
@@ -16,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Would you rather?</h1>
-        <Login />
+        <Main />
       </div>
     );
   }
