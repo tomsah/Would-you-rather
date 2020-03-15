@@ -22,7 +22,7 @@ class Login extends Component{
         <ul className='login-container'>
           { usersID.map( id => (
             <li key={id} onClick={(e) => this.loggingUser(e, id)}>
-              <img className='avatar' src={users[id].avatarURL} alt=""/>
+              <img className='avatar-small float-left' src={users[id].avatarURL} alt=""/>
              <p>{users[id].name}</p>
             </li>
           )) }

@@ -1,3 +1,9 @@
+/* general */
+
+html,body {
+  height:100%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,6 +13,27 @@ body {
 ul{
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+/* utils */
+.float-left{
+  float: left;
+}
+
+.avatar-small {
+  width: 30px;
+  height: 30px;
+}
+
+.avatar-medium {
+  width: 100px;
+  height: 100px;
+}
+
+.answer {
+  background: darkseagreen;
+  border-color: #2e7d32;
 }
 
 /* Login.jsx */
@@ -23,8 +50,96 @@ ul{
   margin: 7px 0;
 }
 
-.avatar {
-  width: 30px;
-  height: 30px;
-  float: left;
+/* dashboard */
+
+.dashboard {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid darkgrey;
 }
+
+.dashboard__nav {
+  border-bottom: 1px solid darkgrey;
+}
+
+.dashboard__nav ul{
+ height: 50px;
+}
+
+.dashboard__nav li {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.dashboard__nav li.active{
+  background-color: darkgray;
+}
+
+
+/* card */
+
+.card {
+  width: 80%;
+  border: 1px solid gray;
+  margin: 20px auto;
+}
+
+.card__body{
+  border-top: 1px solid gray;
+  display: flex;
+}
+
+.card__body__avatar {
+  position: relative;
+  width: 30%;
+}
+
+.card__body__avatar img{
+  transform: translate(-50%,-50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.card__body__info {
+  width: 69%;
+  border-left: 1px solid gray;
+}
+
+.card_answer_result__percentage {
+  height: 25px;
+  border: 2px solid gray;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 8px;
+  overflow: hidden;
+  background: lightgray;
+  line-height: 25px;
+  position: relative;
+}
+
+.card_answer_result__percentage  span{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card_answer_result {
+  border: 2px solid;
+  width: 85%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.card_answer_result__percentage div {
+  background-color: #60ac5d;
+  height: inherit;
+}
+
+
+

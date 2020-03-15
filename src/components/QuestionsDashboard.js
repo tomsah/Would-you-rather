@@ -18,9 +18,15 @@ class QuestionsDashboard extends Component {
     return this.setState({ active: e.target.id });
   };
 
+  submitAnswer = (e) => {
+    e.preventDefault()
+    // submit answer
+    console.log(e.target.value)
+  }
+
+
   render() {
-    console.log("Dashboard props", this.props.user);
-    const { questionsId, user } = this.props;
+    const { questionsId, user, questions, users } = this.props;
     const { active } = this.state;
 
     const userQuestionsAnswered = user && Object.keys(user.answers);
@@ -37,9 +43,10 @@ class QuestionsDashboard extends Component {
     }
 
     return (
-      <div>
-        <div>
-          <div onClick={e => this.dashboardNavigate(e)}>
+      <div className='dashboard'>
+          <div
+            className='dashboard__nav'
+            onClick={e => this.dashboardNavigate(e)}>
             <ul>
               <li
                 id="Unanswered"
@@ -57,38 +64,46 @@ class QuestionsDashboard extends Component {
               </li>
             </ul>
           </div>
-          <div>
-            {active === "Unanswered" ? (
-              <ul>
-                {unAnsweredQuestions &&
-                  unAnsweredQuestions.map(id => (
-                    <li key={id}>
-                      <QuestionCard id={id} />
-                    </li>
-                  ))}
-              </ul>
-            ) : (
-              <ul>
-                {answeredQuestions &&
-                  answeredQuestions.map(id => (
-                    <li key={id}>
-                      <QuestionCard id={id} />
-                    </li>
-                  ))}
-              </ul>
-            )}
+
+          <div className='dashboard__container'>
+            <ul>
+              {active === "Unanswered" ?
+                unAnsweredQuestions &&
+                unAnsweredQuestions.map(id => (
+                  <li key={id}>
+                    <QuestionCard
+                      unAnswered='unAnswered'
+                      authorInfo={users[questions[id].author]}
+                      question={questions[id]}
+                      handleSubmitAnswer={this.submitAnswer} />
+                  </li>
+                ))
+                :
+                answeredQuestions &&
+                answeredQuestions.map(id => (
+                  <li key={id}>
+                    <QuestionCard
+                      answered='answered'
+                      authorInfo={users[questions[id].author]}
+                      question={questions[id]}
+                      handleSubmitAnswer={this.submitAnswer} />
+                  </li>
+                ))
+              }
+            </ul>
           </div>
-        </div>
-        <div />
       </div>
     );
   }
 }
 
 function mapStateToProps({ questions, users, loggedInUser }) {
+
   return {
     questionsId: Object.keys(questions),
     questions,
+    users,
+    loggedInUser,
     user: users["sarahedo"]
   };
 }

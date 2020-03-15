@@ -8,10 +8,6 @@ import Dashboard  from './QuestionsDashboard'
 // import LeaderBoard from './LeaderBoard
 
 class Main extends Component {
-  state = {
-    loggedInUser: 'sarahedo'
-  }
-
   render() {
     return(
       <div>
@@ -22,7 +18,5 @@ class Main extends Component {
     )
   }
 }
-
-
 
 export default connect()(Main)
