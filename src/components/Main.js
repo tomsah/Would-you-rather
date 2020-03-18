@@ -12,7 +12,7 @@ class Main extends Component {
     return(
       <div>
         <Header />
-        /* Routes are going here */
+       { /* Routes are going here */}
         <Dashboard />
       </div>
     )

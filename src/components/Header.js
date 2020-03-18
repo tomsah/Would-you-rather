@@ -1,20 +1,41 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect} from 'react-redux'
 
-const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-          <a href="#">New question</a>
-          <a href="#">Leader board</a>
-        </li>
-      </ul>
-    </nav>
-    <div>
-      User Info here
-    </div>
-  </header>
-)
+class Header extends  Component {
+  render () {
+    const { userInfo } = this.props
+    console.log('userinfo', userInfo)
+    return(
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="#" className='active'>Home</a>
+            </li>
+            <li>
+              <a href="#">New question</a>
+            </li>
+            <li>
+              <a href="#">Leader board</a>
+            </li>
+          </ul>
+        </nav>
+          {
+            userInfo && <div className='user-info'>
+              <span>{`Hello ${userInfo && userInfo.name}`}</span>
+              <img className=' avatar-small' src={userInfo.avatarURL} alt=""/>
+              <button>Log out</button>
+            </div>
+          }
+      </header>
+    )
+  }
+}
 
-export default Header
+function mapStateToProps({users, loggedInUser}) {
+  return {
+    userInfo: users[loggedInUser]
+  }
+}
+
+export default connect(mapStateToProps)(Header)
