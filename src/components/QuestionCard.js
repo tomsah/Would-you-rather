@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CardBodyAnswered from './CardBodyAnswered'
 import CardBodyUnanswered from './CardBodyUnanswered'
+import { handleAnsweredQuestion } from "../actions/questions";
 
 class QuestionCard extends Component {
   state = {
@@ -9,9 +10,14 @@ class QuestionCard extends Component {
     questionPreview: true,
   }
 
-  submitAnswer = (e) => {
-    e.preventDefault()
-    console.log(e.target.value)
+  submitAnswer = (questionID) => {
+    const userAnswer = {
+      authedUser: "sarahedo",
+      qid: questionID,
+      answer: this.state.selectedAnswer
+    }
+    const { dispatch } = this.props
+    dispatch(handleAnsweredQuestion(userAnswer))
   }
 
   selectAnswer = (e) =>  this.setState({
@@ -46,6 +52,7 @@ class QuestionCard extends Component {
                   <CardBodyUnanswered
                     question={question}
                     selectedAnswer={selectedAnswer}
+                    handleSubmitAnswer={this.submitAnswer}
                     handleSelectedAnswer={this.selectAnswer}/>
                     :
                   <CardBodyAnswered
