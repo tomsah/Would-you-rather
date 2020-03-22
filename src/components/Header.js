@@ -4,7 +4,6 @@ import { connect} from 'react-redux'
 class Header extends  Component {
   render () {
     const { userInfo } = this.props
-    console.log('userinfo', userInfo)
     return(
       <header>
         <nav>
@@ -13,10 +12,10 @@ class Header extends  Component {
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">New question</a>
+              <a href="#" className='active'>New question</a>
             </li>
             <li>
-              <a href="#" className='active'>Leader board</a>
+              <a href="#">Leader board</a>
             </li>
           </ul>
         </nav>

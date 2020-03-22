@@ -10,7 +10,6 @@ class QuestionsDashboard extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-
     dispatch(handleReceiveQuestions());
   }
 

@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 
 import Header from './Header'
 // import Dashboard  from './QuestionsDashboard'
-// import NewQuestion from './NewQuestion'
+import NewQuestion from './NewQuestion'
 // import Question from  './Question'
-import LeaderBoard from './LeaderBoard'
+// import LeaderBoard from './LeaderBoard'
 
 class Main extends Component {
   render() {
@@ -13,7 +13,7 @@ class Main extends Component {
       <div>
         <Header />
        { /* Routes are going here */}
-        <LeaderBoard />
+        <NewQuestion />
       </div>
     )
   }
