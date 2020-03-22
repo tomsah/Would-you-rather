@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { connect} from 'react-redux'
+import { NavLink } from 'react-router-dom'
+
+
 
 class Header extends  Component {
   render () {
@@ -9,13 +12,13 @@ class Header extends  Component {
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <NavLink to='/' exact activeClassName='active'>Home</NavLink>
             </li>
             <li>
-              <a href="#" className='active'>New question</a>
+              <NavLink to='/add' exact activeClassName='active'>New question</NavLink>
             </li>
             <li>
-              <a href="#">Leader board</a>
+              <NavLink to='/leaderboard' exact activeClassName='active'>Leader board</NavLink>
             </li>
           </ul>
         </nav>

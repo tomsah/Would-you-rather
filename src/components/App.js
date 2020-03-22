@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
+import {BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './Header'
 import { handleReceiveUsers } from '../actions/users'
 import { handleReceiveQuestions } from '../actions/questions'
 import{ setLoggedInUser } from '../actions/loggedInUser'
-// import Login from './Login'
-import Main from './Main'
+import Login from './Login'
+import QuestionsDashboard from './QuestionsDashboard'
+import NewQuestion from './NewQuestion'
+import LeaderBoard from './LeaderBoard'
 
 
 class App extends Component {
@@ -17,12 +21,34 @@ class App extends Component {
   }
 
   render() {
+    const { loggedIn } = this.props
     return (
-      <div className="App">
-        <Main />
-      </div>
+      <Router>
+        <Fragment>
+          <div className="App">
+            <Header/>
+            {
+              loggedIn ?
+                <div>
+                  <Route path='/' exact component={QuestionsDashboard} />
+                  <Route path='/add' component={NewQuestion} />
+                  <Route path='/leaderboard' component={LeaderBoard} />
+                </div>
+                :
+                <Login />
+            }
+          </div>
+        </Fragment>
+      </Router>
+
     );
   }
 }
 
-export default connect()(App);
+function mapStateToProps ({loggedIn}) {
+  return {
+    loggedIn: loggedIn !== null
+  }
+}
+
+export default connect(mapStateToProps)(App);
