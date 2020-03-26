@@ -8,14 +8,11 @@ class Login extends Component{
   loggingUser = (e, id) => {
     e.preventDefault()
     const { dispatch } = this.props
-    //TODO redirect to the home page or requested page
-
     dispatch(setLoggedInUser(id))
   }
 
   render() {
     const { users, usersID } = this.props
-    console.log(users)
     return(
       <div>
         <h2>PLEASE SELECT A USER TO START PLAYING</h2>

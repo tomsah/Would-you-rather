@@ -1,31 +1,18 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { handleReceiveQuestions } from "../actions/questions";
-import QuestionCard from "./QuestionCard";
+import Card from "./Card";
 
 class QuestionsDashboard extends Component {
   state = {
     active: "Unanswered"
   };
 
-  componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(handleReceiveQuestions());
-  }
-
   dashboardNavigate = e => {
     return this.setState({ active: e.target.id });
   };
 
-  submitAnswer = (e) => {
-    e.preventDefault()
-    // submit answer
-    console.log(e.target.value)
-  }
-
-
   render() {
-    const { questionsId, user, questions, users } = this.props;
+    const { questionsId, user, questions } = this.props;
     const { active } = this.state;
 
     const userQuestionsAnswered = user && Object.keys(user.answers);
@@ -35,10 +22,11 @@ class QuestionsDashboard extends Component {
     if (userQuestionsAnswered && questionsId) {
       answeredQuestions = questionsId.filter(x =>
         userQuestionsAnswered.includes(x)
-      );
+      ).sort((a,b) => questions[b].timestamp - questions[a].timestamp );
+
       unAnsweredQuestions = questionsId.filter(
         x => !userQuestionsAnswered.includes(x)
-      );
+      ).sort((a,b) => questions[b].timestamp - questions[a].timestamp );
     }
 
     return (
@@ -70,22 +58,14 @@ class QuestionsDashboard extends Component {
                 unAnsweredQuestions &&
                 unAnsweredQuestions.map(id => (
                   <li key={id}>
-                    <QuestionCard
-                      unAnswered='unAnswered'
-                      authorInfo={users[questions[id].author]}
-                      question={questions[id]}
-                      handleSubmitAnswer={this.submitAnswer} />
+                    <Card id={id} preview={true}/>
                   </li>
                 ))
                 :
                 answeredQuestions &&
                 answeredQuestions.map(id => (
                   <li key={id}>
-                    <QuestionCard
-                      answered='answered'
-                      authorInfo={users[questions[id].author]}
-                      question={questions[id]}
-                      handleSubmitAnswer={this.submitAnswer} />
+                    <Card id={id} preview={true}/>
                   </li>
                 ))
               }
@@ -97,13 +77,10 @@ class QuestionsDashboard extends Component {
 }
 
 function mapStateToProps({ questions, users, loggedInUser }) {
-
   return {
     questionsId: Object.keys(questions),
     questions,
-    users,
-    loggedInUser,
-    user: users["sarahedo"]
+    user: users[loggedInUser]
   };
 }
 

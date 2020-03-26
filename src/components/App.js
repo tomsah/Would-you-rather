@@ -1,23 +1,24 @@
 import React, { Component, Fragment } from 'react';
 import './App.css';
 import { connect } from 'react-redux'
-import {BrowserRouter as Router, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import { handleInitialData} from '../actions/initialData'
+
 import Header from './Header'
-import { handleReceiveUsers } from '../actions/users'
-import { handleReceiveQuestions } from '../actions/questions'
-import{ setLoggedInUser } from '../actions/loggedInUser'
 import Login from './Login'
 import QuestionsDashboard from './QuestionsDashboard'
 import NewQuestion from './NewQuestion'
 import LeaderBoard from './LeaderBoard'
+import QuestionPage from './QuestionPage'
+import NotFound from './NotFound'
 
 
 class App extends Component {
   componentDidMount () {
     const { dispatch } = this.props
-    dispatch(handleReceiveQuestions());
-    dispatch(handleReceiveUsers())
-    dispatch(setLoggedInUser('sarahedo'))
+      dispatch(handleInitialData())
+
   }
 
   render() {
@@ -30,9 +31,13 @@ class App extends Component {
             {
               loggedIn ?
                 <div>
-                  <Route path='/' exact component={QuestionsDashboard} />
-                  <Route path='/add' component={NewQuestion} />
-                  <Route path='/leaderboard' component={LeaderBoard} />
+                  <Switch>
+                    <Route path='/' exact component={QuestionsDashboard} />
+                    <Route path='/question/:id' component={QuestionPage} />
+                    <Route path='/add' component={NewQuestion} />
+                    <Route path='/leaderboard' component={LeaderBoard} />
+                    <Route component={NotFound}/>
+                  </Switch>
                 </div>
                 :
                 <Login />
@@ -45,9 +50,9 @@ class App extends Component {
   }
 }
 
-function mapStateToProps ({loggedIn}) {
+function mapStateToProps ({loggedInUser}) {
   return {
-    loggedIn: loggedIn !== null
+    loggedIn: loggedInUser !== null
   }
 }
 

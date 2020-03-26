@@ -10,8 +10,9 @@ class CardBodyAnswered extends Component {
 
   render() {
     const { question, user } = this.props
-    const totalVote = question.optionOne.votes.length + question.optionTwo.votes.length
     console.log('question', question)
+
+    const totalVote = question.optionOne.votes.length + question.optionTwo.votes.length
     return(
       <div>
         <h2>Results:</h2>

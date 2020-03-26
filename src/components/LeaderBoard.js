@@ -10,12 +10,11 @@ class LeaderBoard extends Component {
 
   render() {
     const { usersList, users } = this.props;
-
+    console.log('foo', usersList, users)
     const orderedUsersList = [...usersList].sort((a,b) => {
       return this.calculateScore(b) - this.calculateScore(a)
     })
 
-    console.log('orderedUsersList', orderedUsersList)
     return (
       <div className="leaderboard">
         <h3>Leader Board</h3>
