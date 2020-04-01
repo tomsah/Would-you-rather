@@ -1,29 +1,66 @@
 /* general */
+@font-face {
+  font-family: "starwars-big";
+  src: local("starwars-big"),
+    url("./font/star-jedi/Starjhol.ttf") format("truetype");
+}
 
-html,body {
-  height:100%;
+@font-face {
+  font-family: "starwars";
+  src: local("starwars"),
+    url("./font/STARWARS/STARWARS.TTF") format("truetype");
+}
+
+.neon-wrapper-red {
+  box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272,
+    0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b,
+    inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
+  border-radius: 1.5rem;
+}
+
+.neon-wrapper-blue {
+  box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #728ee9,
+    0 0 4vw 0.4vw #210be5, inset 0 0 1.5vw 0.4vw #210be5,
+    inset 0 0 0.4vw 0.2vw #728ee9, inset 0 0 0.5vw 0.2vw #fff7f7;
+  border-radius: 1.5rem;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "starwars", sans-serif;
+  background: url("http://www.ultradrive.com/images/rdx_starfield.jpg");
+  color: #e6ca3a;
 }
 
-ul{
+h1,
+h2 {
+  font-family: "starwars-big", sans-serif;
+}
+
+ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 /* utils */
-.float-left{
+.float-left {
   float: left;
 }
 
+.circle-image {
+  border-radius: 100px;
+}
+
 .avatar-small {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 
 .avatar-medium {
@@ -44,7 +81,7 @@ header {
   display: flex;
 }
 
-nav{
+nav {
   width: 65%;
 }
 
@@ -79,7 +116,7 @@ nav li a:hover {
 
 nav li a.active:after,
 nav li a:hover:after {
-  content: '';
+  content: "";
   border-bottom: 2.5em solid green;
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
@@ -107,17 +144,32 @@ nav li a:hover:after {
 }
 
 /* Login.jsx */
+
+.login-title {
+  font-size: 2em;
+  letter-spacing: 2.5px;
+  text-align: center;
+}
+
 .login-container {
-  width: 35%;
+  width: 40%;
   margin: 0 auto;
-  border: 1px solid;
+  padding: 10px;
 }
 
 .login-container li {
-  border: 1px solid red;
+  display: flex;
+  padding: 10px 5px;
+  font-family: "starwars-big", sans-serif;
 }
+
 .login-container p {
   margin: 7px 0;
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+  font-size: 24px;
+  letter-spacing: 2px;
 }
 
 /* dashboard */
@@ -126,28 +178,42 @@ nav li a:hover:after {
   width: 80%;
   margin: 0 auto;
   border: 1px solid darkgrey;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .dashboard__nav {
   border-bottom: 1px solid darkgrey;
 }
 
-.dashboard__nav ul{
- height: 50px;
+.dashboard__nav ul {
+  height: 65px;
+  display: flex;
 }
 
 .dashboard__nav li {
-  display: inline-block;
-  width: 50%;
-  text-align: center;
-  height: 100%;
-  vertical-align: middle;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  letter-spacing: 2px;
+  font-family: "starwars-big", sans-serif;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.dashboard__nav li.active{
-  background-color: darkgray;
+.dashboard__nav li:first-child {
+border-top-left-radius: 1.5rem;
 }
 
+.dashboard__nav li:last-child {
+  border-top-right-radius: 1.5rem;
+}
+
+.dashboard__nav li.active {
+  box-shadow: 0 0 5px #fff, 0 0 8px #fff, 1px 1px 5px #fff,
+    -1px 4px 20px 0px blue, 0px 15px 20px blue;
+  font-size: 20px;
+}
 
 /* card */
 
@@ -157,7 +223,11 @@ nav li a:hover:after {
   margin: 20px auto;
 }
 
-.card__body{
+.card__title {
+  font-family: "starwars-big", sans-serif;
+}
+
+.card__body {
   border-top: 1px solid gray;
   display: flex;
 }
@@ -167,8 +237,8 @@ nav li a:hover:after {
   width: 30%;
 }
 
-.card__body__avatar img{
-  transform: translate(-50%,-50%);
+.card__body__avatar img {
+  transform: translate(-50%, -50%);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -191,7 +261,7 @@ nav li a:hover:after {
   position: relative;
 }
 
-.card_answer_result__percentage  span{
+.card_answer_result__percentage span {
   display: block;
   position: absolute;
   top: 50%;
@@ -204,6 +274,7 @@ nav li a:hover:after {
   width: 85%;
   margin: 20px auto;
   border-radius: 10px;
+  position: relative;
 }
 
 .card_answer_result__percentage div {
@@ -211,9 +282,24 @@ nav li a:hover:after {
   height: inherit;
 }
 
+.badge {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: black;
+  border: 1px solid #e6ca3a;
+  border-radius: 50px;
+  overflow: hidden;
+  top: -16px;
+  right: -19px;
+  color: white;
+  transform: rotate(24deg);
+  display: flex;
+  align-items: center;
+}
 
 /* Leaderboard */
-.leaderboard-card{
+.leaderboard-card {
   display: flex;
   height: 140px;
 }
@@ -222,13 +308,13 @@ nav li a:hover:after {
   width: 60%;
 }
 
-.leaderboard-card__avatar{
+.leaderboard-card__avatar {
   position: relative;
   width: 25%;
- }
+}
 
-.leaderboard-card__avatar img{
-  transform: translate(-50%,-50%);
+.leaderboard-card__avatar img {
+  transform: translate(-50%, -50%);
   position: absolute;
   left: 50%;
   top: 50%;
@@ -258,8 +344,8 @@ nav li a:hover:after {
   align-items: center;
 }
 
-.leaderboard-card__body__question-totals li:first-child:after{
-  content: '';
+.leaderboard-card__body__question-totals li:first-child:after {
+  content: "";
   border-bottom: 1px solid gray;
   opacity: 0.7;
   width: 80%;
@@ -293,7 +379,7 @@ nav li a:hover:after {
   margin: 10px 0;
 }
 
-.new-question__body form input{
+.new-question__body form input {
   display: block;
   margin: 5px 0;
   width: 100%;
@@ -302,12 +388,11 @@ nav li a:hover:after {
   border: 1px solid grey;
 }
 
-.new-question__body form button{
+.new-question__body form button {
   margin-top: 15px;
   width: 100%;
   height: 30px;
   background: green;
   border-radius: 3px;
   cursor: pointer;
-
 }

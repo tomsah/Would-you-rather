@@ -46,7 +46,7 @@ class Card extends Component {
           <h4 className='card__title'> {` ${users[question.author].name} asks:`}</h4>
           <div className='card__body'>
             <div className='card__body__avatar'>
-              <img className=' avatar-medium'  src={user.avatarURL} alt=""/>
+              <img className=' avatar-medium circle-image'  src={user.avatarURL} alt=""/>
             </div>
             <div className='card__body__info'>
               {

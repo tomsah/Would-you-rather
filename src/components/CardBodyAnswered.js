@@ -10,13 +10,13 @@ class CardBodyAnswered extends Component {
 
   render() {
     const { question, user } = this.props
-    console.log('question', question)
-
+    const answerBadge = <div className='badge'>Your Side</div>
     const totalVote = question.optionOne.votes.length + question.optionTwo.votes.length
     return(
       <div>
         <h2>Results:</h2>
         <div className={`card_answer_result ${user.answers[question.id] === 'optionOne' ? 'answer' : ''}`}>
+          {user.answers[question.id] === 'optionOne' && answerBadge}
           <p>{question.optionOne.text}</p>
           <div className='card_answer_result__percentage'>
               <div
@@ -29,6 +29,7 @@ class CardBodyAnswered extends Component {
         </div>
 
         <div className={`card_answer_result ${user.answers[question.id] === 'optionTwo' ? 'answer' : ''}`}>
+          {user.answers[question.id] === 'optionTwo' && answerBadge}
           <p>{question.optionTwo.text}</p>
           <div className='card_answer_result__percentage'>
             <div

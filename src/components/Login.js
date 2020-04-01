@@ -15,11 +15,12 @@ class Login extends Component{
     const { users, usersID } = this.props
     return(
       <div>
-        <h2>PLEASE SELECT A USER TO START PLAYING</h2>
-        <ul className='login-container'>
+        <h1>would you rather???</h1>
+        <h2 className='login-title'>one must eventually <br/> choose a side </h2>
+        <ul className='login-container neon-wrapper-red'>
           { usersID.map( id => (
             <li key={id} onClick={(e) => this.loggingUser(e, id)}>
-              <img className='avatar-small float-left' src={users[id].avatarURL} alt=""/>
+              <img className='avatar-small circle-image' src={users[id].avatarURL} alt=""/>
              <p>{users[id].name}</p>
             </li>
           )) }

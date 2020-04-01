@@ -30,7 +30,7 @@ class QuestionsDashboard extends Component {
     }
 
     return (
-      <div className='dashboard'>
+      <div className='dashboard neon-wrapper-red '>
           <div
             className='dashboard__nav'
             onClick={e => this.dashboardNavigate(e)}>

@@ -27,10 +27,10 @@ class App extends Component {
       <Router>
         <Fragment>
           <div className="App">
-            <Header/>
             {
               loggedIn ?
                 <div>
+                  <Header/>
                   <Switch>
                     <Route path='/' exact component={QuestionsDashboard} />
                     <Route path='/question/:id' component={QuestionPage} />
