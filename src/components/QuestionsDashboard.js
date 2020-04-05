@@ -40,14 +40,14 @@ class QuestionsDashboard extends Component {
                 key="Unanswered"
                 className={active === "Unanswered" ? "active" : ""}
               >
-                Unanswered questions
+                unanswered questions
               </li>
               <li
                 id="Answered"
                 key="Answered"
                 className={active === "Answered" ? "active" : ""}
               >
-                Answered questions
+                answered questions
               </li>
             </ul>
           </div>

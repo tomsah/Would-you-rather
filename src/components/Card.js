@@ -39,11 +39,14 @@ class Card extends Component {
     const { question, user, users, id, preview} = this.props
     const { selectedAnswer } = this.state
     const answered = Object.keys(user.answers).includes(id)
+    const userName = users[question.author].name
 
     return(
       <div>
-        <div className='card'>
-          <h4 className='card__title'> {` ${users[question.author].name} asks:`}</h4>
+        <div className='card neon-wrapper-red'>
+          <div className='card__title'>
+            <h4 className='card__title__text'> {` ${userName.toLocaleLowerCase()} asks:`}</h4>
+          </div>
           <div className='card__body'>
             <div className='card__body__avatar'>
               <img className=' avatar-medium circle-image'  src={user.avatarURL} alt=""/>

@@ -16,6 +16,7 @@ class Login extends Component{
     return(
       <div>
         <h1>would you rather???</h1>
+        <div className='login-title'>decide you must</div>
         <h2 className='login-title'>one must eventually <br/> choose a side </h2>
         <ul className='login-container neon-wrapper-red'>
           { usersID.map( id => (
