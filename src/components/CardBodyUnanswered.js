@@ -8,7 +8,7 @@ class CardBodyUnanswered extends Component {
       <div className="card__answers">
         <h2>Would you rather...</h2>
         <form action="" onSubmit={(e) => handleSubmitAnswer(e, question.id)}>
-        <ul className="card__answer__list">
+        <ul className="card__answers__list">
           <li>
             <input
               type="radio"
@@ -32,8 +32,12 @@ class CardBodyUnanswered extends Component {
             <label htmlFor="optionTwo">{question.optionTwo.text}</label>
           </li>
         </ul>
-        <button type='submit'>
-          Submit
+        <button type='submit' className='neon-button'>
+          <span />
+          <span />
+          <span />
+          <span />
+          decide
         </button>
         </form>
       </div>

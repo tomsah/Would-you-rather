@@ -12,26 +12,39 @@ class Header extends  Component {
 
   render () {
     const { userInfo } = this.props
+    const userName = userInfo.name
     return(
       <header>
         <nav>
           <ul>
             <li>
-              <NavLink to='/' exact activeClassName='active'>Home</NavLink>
+              <NavLink to='/' exact activeClassName='active'>
+                <span>home</span>
+              </NavLink>
             </li>
             <li>
-              <NavLink to='/add' exact activeClassName='active'>New question</NavLink>
+              <NavLink to='/add' exact activeClassName='active'>
+                <span>new question</span>
+              </NavLink>
             </li>
             <li>
-              <NavLink to='/leaderboard' exact activeClassName='active'>Leader board</NavLink>
+              <NavLink to='/leaderboard' exact activeClassName='active'>
+                <span> leader board</span>
+              </NavLink>
             </li>
           </ul>
         </nav>
           {
             userInfo && <div className='user-info'>
-              <span>{`Hello ${userInfo && userInfo.name}`}</span>
-              <img className=' avatar-small' src={userInfo.avatarURL} alt=""/>
-              <button onClick={this.handleLogout}>Log out</button>
+              <span>Hello <br/> {userName.toLowerCase()}</span>
+              <img className=' avatar-small circle-image' src={userInfo.avatarURL} alt=""/>
+              <button onClick={this.handleLogout} className='neon-button'>
+                <span />
+                <span />
+                <span />
+                <span />
+                Log out
+              </button>
             </div>
           }
       </header>
