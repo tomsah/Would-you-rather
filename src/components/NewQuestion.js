@@ -44,7 +44,7 @@ class NewQuestion extends Component {
     }
 
     return (
-      <div className="new-question">
+      <div className="new-question neon-wrapper-green">
         <h2>Create a new Question</h2>
         <div className="new-question__body">
           <div className="new-question__body__meta">Complete the question</div>
@@ -67,9 +67,14 @@ class NewQuestion extends Component {
             />
             <button
               type="submit"
+              className='neon-button'
               disabled={optionOne.length && optionTwo.length === 0}
             >
-              Submit
+              <span />
+              <span />
+              <span />
+              <span />
+              submit
             </button>
           </form>
         </div>
