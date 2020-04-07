@@ -15,7 +15,7 @@ class CardBodyAnswered extends Component {
     return(
       <div>
         <h2>Results:</h2>
-        <div className={`card_answer_result ${user.answers[question.id] === 'optionOne' ? 'answer' : ''}`}>
+        <div className={`card_answer_result ${user.answers[question.id] === 'optionOne' ? 'answer  neon-wrapper-green' : ' neon-wrapper-red'}`}>
           {user.answers[question.id] === 'optionOne' && answerBadge}
           <p>{question.optionOne.text}</p>
           <div className='card_answer_result__percentage'>
@@ -28,7 +28,7 @@ class CardBodyAnswered extends Component {
           {`${question.optionOne.votes.length} out of ${totalVote} votes`}
         </div>
 
-        <div className={`card_answer_result ${user.answers[question.id] === 'optionTwo' ? 'answer' : ''}`}>
+        <div className={`card_answer_result ${user.answers[question.id] === 'optionTwo' ? 'answer  neon-wrapper-green' : '  neon-wrapper-red'}`}>
           {user.answers[question.id] === 'optionTwo' && answerBadge}
           <p>{question.optionTwo.text}</p>
           <div className='card_answer_result__percentage'>

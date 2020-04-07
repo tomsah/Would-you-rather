@@ -1,0 +1,23 @@
+.not-found {
+  background-image: url("./avatar/yoda-404.png");
+  height: 100vh;
+  background-position: 0% bottom;
+  background-repeat: no-repeat;
+
+  &__info {
+    width: 60%;
+    justify-content: space-between;
+    order: 2;
+    margin-left: auto;
+
+    &__text {
+      font-size: 105px;
+      letter-spacing: 10px;
+    }
+    p{
+      letter-spacing: 2px;
+      font-size: 18px;
+      margin-bottom: 35px;
+    }
+  }
+}

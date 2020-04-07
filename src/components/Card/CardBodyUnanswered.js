@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class CardBodyUnanswered extends Component {
   render() {
     const { question, handleSelectedAnswer, selectedAnswer, handleSubmitAnswer } = this.props;
-    console.log('selectedAnswer CardBodyUnanswered', selectedAnswer)
+
     return (
       <div className="card__answers">
         <h2>Would you rather...</h2>

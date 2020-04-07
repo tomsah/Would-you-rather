@@ -32,7 +32,7 @@ class App extends Component {
                   <Header/>
                   <Switch>
                     <Route path='/' exact component={QuestionsDashboard} />
-                    <Route path='/question/:id' component={QuestionPage} />
+                    <Route path='/question/:id' exact component={QuestionPage} />
                     <Route path='/add' component={NewQuestion} />
                     <Route path='/leaderboard' component={LeaderBoard} />
                     <Route component={NotFound}/>

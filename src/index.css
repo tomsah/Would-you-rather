@@ -36,8 +36,8 @@
   height: 100px; }
 
 .answer {
-  background: darkseagreen;
-  border-color: #2e7d32; }
+  background: #151715;
+  color: white; }
 
 /*
  border-animation => https://codepen.io/Inderpreet23/pen/rLzbLk
@@ -561,9 +561,11 @@ nav ul li a span {
 .card_answer_result {
   border: 2px solid;
   width: 85%;
-  margin: 20px auto;
+  margin: 50px auto;
   border-radius: 10px;
-  position: relative; }
+  padding: 20px 0px;
+  position: relative;
+  letter-spacing: 2px; }
 
 .card_answer_result__percentage {
   height: 25px;
@@ -574,7 +576,8 @@ nav ul li a span {
   overflow: hidden;
   background: lightgray;
   line-height: 25px;
-  position: relative; }
+  position: relative;
+  font-family: "starwars", sans-serif; }
 
 .card_answer_result__percentage span {
   display: block;
@@ -601,3 +604,24 @@ nav ul li a span {
   transform: rotate(24deg);
   display: flex;
   align-items: center; }
+
+.not-found {
+  background-image: url("./avatar/yoda-404.png");
+  height: 100vh;
+  background-position: 0% bottom;
+  background-repeat: no-repeat; }
+
+.not-found__info {
+  width: 60%;
+  justify-content: space-between;
+  order: 2;
+  margin-left: auto; }
+
+.not-found__info__text {
+  font-size: 105px;
+  letter-spacing: 10px; }
+
+.not-found__info p {
+  letter-spacing: 2px;
+  font-size: 18px;
+  margin-bottom: 35px; }
