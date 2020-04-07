@@ -16,16 +16,16 @@ class LeaderBoard extends Component {
     })
 
     return (
-      <div className="leaderboard">
-        <h3>Leader Board</h3>
+      <div className="leaderboard neon-wrapper-blue">
+        <h3>leader board</h3>
         { orderedUsersList.map(userId => {
             const answered = Object.keys(users[userId].answers).length;
             const created = users[userId].questions.length;
             return (
-              <div className="leaderboard-card card" key={userId}>
+              <div className="leaderboard-card card neon-wrapper-blue" key={userId}>
                 <div className="leaderboard-card__avatar">
                   <img
-                    className=" avatar-medium"
+                    className=" avatar-medium circle-image"
                     src={users[userId].avatarURL}
                     alt=""
                   />
@@ -40,8 +40,7 @@ class LeaderBoard extends Component {
                   </ul>
                 </div>
                 <div className="leaderboard-card__score">
-                  <span>Score:</span>
-                  {this.calculateScore(userId)}
+                  <span>Score: {this.calculateScore(userId)}</span>
                 </div>
               </div>
             );

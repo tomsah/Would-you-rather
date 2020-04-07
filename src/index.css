@@ -655,6 +655,16 @@ nav li a:hover {
 .leaderboard-card {
   display: flex;
   height: 140px;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  padding: 25px 20px 50px 0;
+}
+
+.leaderboard {
+  font-size: 24px;
+  letter-spacing: 2px;
 }
 
 .leaderboard-card__body {
@@ -679,7 +689,8 @@ nav li a:hover {
   align-items: center;
   padding-left: 10%;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .leaderboard-card__body__question-totals {
@@ -695,17 +706,30 @@ nav li a:hover {
   position: relative;
   display: flex;
   align-items: center;
+  font-size: 18px;
+}
+.leaderboard-card__body__question-totals li:first-child{
+  margin-bottom: 20px;
+}
+
+.leaderboard-card__body__question-totals li:last-child{
+  margin-top: 20px;
 }
 
 .leaderboard-card__body__question-totals li:first-child:after {
   content: "";
-  border-bottom: 1px solid gray;
+  box-shadow: inset 1px 0px 1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #728ee9,
+    0 0 0vw 0.4vw #210be5, 0 0 3vw 1.4vw #210be5, inset 0 0 0.4vw 0.2vw #728ee9,
+    inset 0 0 0.5vw 0.2vw #ffffff;
   opacity: 0.7;
   width: 80%;
   position: absolute;
   left: 50%;
-  bottom: 0;
+  height: 2px;
+  bottom: -20px;
+  border-radius: 6px;
   transform: translate(-50%, 0px);
+  z-index: -1;
 }
 
 .leaderboard-card__score {
@@ -713,6 +737,18 @@ nav li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  word-spacing: 100px;
+}
+
+.leaderboard-card__score span {
+  border: 1px solid #e6ca3a;
+  border-radius: 510px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 /* New question */
