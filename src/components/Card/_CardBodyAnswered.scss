@@ -1,0 +1,48 @@
+.card_answer_result {
+  border: 2px solid;
+  width: 85%;
+  margin: 20px auto;
+  border-radius: 10px;
+  position: relative;
+
+  &__percentage {
+    height: 25px;
+    border: 2px solid gray;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: lightgray;
+    line-height: 25px;
+    position: relative;
+
+      span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      div {
+        background-color: #60ac5d;
+        height: inherit;
+      }
+  }
+}
+
+.badge {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: black;
+  border: 1px solid #e6ca3a;
+  border-radius: 50px;
+  overflow: hidden;
+  top: -16px;
+  right: -19px;
+  color: white;
+  transform: rotate(24deg);
+  display: flex;
+  align-items: center;
+}

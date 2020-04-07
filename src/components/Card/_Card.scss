@@ -1,151 +1,103 @@
 /* card */
-
 .card {
   width: 80%;
   margin: 75px auto;
-}
 
-.card__preview p {
-  color: white;
-  letter-spacing: 3px;
-}
+  &__title {
+    overflow: hidden;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272,
+      0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b,
+      inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
+    }
 
-.card__title {
-  overflow: hidden;
-  position: relative;
-}
+    &__text {
+      height: 65px;
+      margin: 0 0 0 40px;
+      font-size: 20px;
+      display: flex;
+      justify-content: left;
+      align-content: center;
+      flex-wrap: wrap;
+    }
+  }
 
-.card__title:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  height: 1px;
-  box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272,
-  0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b,
-  inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
-}
+  &__body {
+    display: flex;
+    border-top-left-radius: 0;
+    &__avatar {
+      position: relative;
+      width: 30%;
 
-.card__title__text {
-  height: 65px;
-  margin: 0 0 0 40px;
-  font-size: 20px;
-  display: flex;
-  justify-content: left;
-  align-content: center;
-  flex-wrap: wrap;
-}
+      img {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      }
+    }
 
-.card__body {
-  display: flex;
-  border-top-left-radius: 0;
-}
+    &__info {
+      width: 69%;
+      position: relative;
+      padding-bottom: 40px;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        box-shadow: inset 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.2vw #e97272,
+        0 0 0vw 0vw #e50b0b, 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272,
+        inset 0 0 0.5vw 0.2vw #fff7f7;
+        z-index: -1;
+      }
+    }
+  }
 
-.card__body__avatar {
-  position: relative;
-  width: 30%;
-}
+  /* card preview */
+  &__preview {
+    p {
+      color: white;
+      letter-spacing: 3px;
+    }
+  }
 
-.card__body__avatar img {
-  transform: translate(-50%, -50%);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
-
-.card__body__info {
-  width: 69%;
-  position: relative;
-  padding-bottom: 40px;
-}
-
-.card__body__info:after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  box-shadow: inset 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.2vw #e97272,
-  0 0 0vw 0vw #e50b0b, 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272,
-  inset 0 0 0.5vw 0.2vw #fff7f7;
-  z-index: -1;
-}
-
-.card__answers__list {
-  width: 80%;
-  margin: 0 auto 25px;
-}
-
-.card__answers__list li input {
-  width: 20px;
-}
-
-.card__answers__list li label {
-  display: inline-block;
-  text-align: left;
-  letter-spacing: 2px;
-  margin-left: 20px;
-  width: 85%;
-  margin-bottom: 20px;
-}
-
-.card__answers button {
-  background: transparent;
-  border: none;
-  width: 33%;
-  margin: 0 auto;
-  display: block;
-  font-family: "starwars-big", sans-serif;
-  padding: 25px;
-}
-
-.card_answer_result__percentage {
-  height: 25px;
-  border: 2px solid gray;
-  width: 80%;
-  margin: 10px auto;
-  border-radius: 8px;
-  overflow: hidden;
-  background: lightgray;
-  line-height: 25px;
-  position: relative;
-}
-
-.card_answer_result__percentage span {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.card_answer_result {
-  border: 2px solid;
-  width: 85%;
-  margin: 20px auto;
-  border-radius: 10px;
-  position: relative;
-}
-
-.card_answer_result__percentage div {
-  background-color: #60ac5d;
-  height: inherit;
-}
-
-.badge {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  background: black;
-  border: 1px solid #e6ca3a;
-  border-radius: 50px;
-  overflow: hidden;
-  top: -16px;
-  right: -19px;
-  color: white;
-  transform: rotate(24deg);
-  display: flex;
-  align-items: center;
+  /* card answers */
+  &__answers {
+    &__list{
+      width: 80%;
+      margin: 0 auto 25px;
+    }
+    li {
+      input {
+        width: 20px;
+      }
+      label {
+        display: inline-block;
+        text-align: left;
+        letter-spacing: 2px;
+        margin-left: 20px;
+        width: 85%;
+        margin-bottom: 20px;
+      }
+    }
+    button {
+      background: transparent;
+      border: none;
+      width: 33%;
+      margin: 0 auto;
+      display: block;
+      font-family: "starwars-big", sans-serif;
+      padding: 25px;
+    }
+  }
 }

@@ -20,3 +20,28 @@
   inset 0 0 0.4vw 0.2vw #72e97a, inset 0 0 0.5vw 0.2vw #fff7f7;
   border-radius: 1.5rem;
 }
+
+
+/* utils */
+.float-left {
+  float: left;
+}
+
+.circle-image {
+  border-radius: 100px;
+}
+
+.avatar-small {
+  width: 60px;
+  height: 60px;
+}
+
+.avatar-medium {
+  width: 100px;
+  height: 100px;
+}
+
+.answer {
+  background: darkseagreen;
+  border-color: #2e7d32;
+}

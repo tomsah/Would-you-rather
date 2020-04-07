@@ -6,6 +6,7 @@
   font-family: "starwars";
   src: local("starwars"), url("./font/STARWARS/STARWARS.TTF") format("truetype"); }
 
+/* color */
 /* Neon border */
 .neon-wrapper-red {
   box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
@@ -18,6 +19,25 @@
 .neon-wrapper-green {
   box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #72e97a, 0 0 4vw 0.4vw #0be524, inset 0 0 1.5vw 0.4vw #0be524, inset 0 0 0.4vw 0.2vw #72e97a, inset 0 0 0.5vw 0.2vw #fff7f7;
   border-radius: 1.5rem; }
+
+/* utils */
+.float-left {
+  float: left; }
+
+.circle-image {
+  border-radius: 100px; }
+
+.avatar-small {
+  width: 60px;
+  height: 60px; }
+
+.avatar-medium {
+  width: 100px;
+  height: 100px; }
+
+.answer {
+  background: darkseagreen;
+  border-color: #2e7d32; }
 
 /*
  border-animation => https://codepen.io/Inderpreet23/pen/rLzbLk
@@ -39,7 +59,6 @@
   flex-wrap: wrap;
   transition: all 1s linear; }
 
-/* Animation */
 .neon-button:hover {
   color: white;
   animation-duration: 1s;
@@ -47,18 +66,8 @@
   animation-iteration-count: infinite;
   animation-name: pulse; }
 
-@keyframes pulse {
-  0% {
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.2);
-    background: rgba(33, 150, 243, 0.6);
-    box-shadow: 0 0 10px rgba(33, 150, 243, 0.8), 0 0 40px rgba(33, 150, 243, 0.8), 0 0 80px rgba(33, 150, 243, 0.8); }
-  100% {
-    font-size: 20px;
-    /*color: rgba(32, 148, 243, 0.8);*/
-    color: rgba(255, 255, 255, 0.8);
-    background: rgba(33, 150, 243, 0.1);
-    box-shadow: 0 0 0 rgba(33, 150, 243, 0.1), 0 0 0 rgba(33, 150, 243, 0.1), 0 0 0 rgba(33, 150, 243, 0.1); } }
+.neon-button:hover span {
+  animation-play-state: paused; }
 
 .neon-button span {
   position: absolute;
@@ -66,9 +75,6 @@
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-iteration-count: infinite; }
-
-.neon-button:hover span {
-  animation-play-state: paused; }
 
 .neon-button span:nth-child(1) {
   top: 0;
@@ -104,6 +110,19 @@
   background: linear-gradient(360deg, transparent, #2196f3);
   animation-name: left-border;
   animation-delay: 0.75s; }
+
+/* Animation */
+@keyframes pulse {
+  0% {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.2);
+    background: rgba(33, 150, 243, 0.6);
+    box-shadow: 0 0 10px rgba(33, 150, 243, 0.8), 0 0 40px rgba(33, 150, 243, 0.8), 0 0 80px rgba(33, 150, 243, 0.8); }
+  100% {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(33, 150, 243, 0.1);
+    box-shadow: 0 0 0 rgba(33, 150, 243, 0.1), 0 0 0 rgba(33, 150, 243, 0.1), 0 0 0 rgba(33, 150, 243, 0.1); } }
 
 @keyframes top-border {
   0% {
@@ -159,25 +178,6 @@ ul {
   padding: 0;
   margin: 0; }
 
-/* utils */
-.float-left {
-  float: left; }
-
-.circle-image {
-  border-radius: 100px; }
-
-.avatar-small {
-  width: 60px;
-  height: 60px; }
-
-.avatar-medium {
-  width: 100px;
-  height: 100px; }
-
-.answer {
-  background: darkseagreen;
-  border-color: #2e7d32; }
-
 .App {
   padding-bottom: 100px;
   text-align: center; }
@@ -192,16 +192,18 @@ ul {
   width: 40%;
   margin: 0 auto;
   padding: 10px; }
-  .login-container li {
-    display: flex;
-    padding: 10px 5px;
-    font-family: "starwars-big", sans-serif; }
-    .login-container li p {
-      flex: 1;
-      margin: 7px 0;
-      text-align: center;
-      font-size: 24px;
-      letter-spacing: 2px; }
+
+.login-container li {
+  display: flex;
+  padding: 10px 5px;
+  font-family: "starwars-big", sans-serif; }
+
+.login-container li p {
+  flex: 1;
+  margin: 7px 0;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 2px; }
 
 /* Header.jsx */
 header {
@@ -231,7 +233,7 @@ nav ul {
   margin: 0 auto;
   padding: 0 12px; }
 
-nav li {
+nav ul li {
   flex: 1 1 0;
   position: relative;
   overflow: hidden;
@@ -239,7 +241,11 @@ nav li {
   border-top-right-radius: 3.5rem;
   height: auto; }
 
-nav li a {
+nav ul li:first-child a span {
+  text-align: center;
+  margin-left: 0; }
+
+nav ul li a {
   position: absolute;
   bottom: 0;
   width: 90%;
@@ -254,21 +260,16 @@ nav li a {
   word-spacing: 100px;
   letter-spacing: 2px; }
 
-nav li a span {
-  margin-left: 26%;
-  display: inline;
-  text-align: left; }
-
-nav li:first-child a span {
-  text-align: center;
-  margin-left: 0; }
-
-nav li a.active,
-nav li a:hover {
+nav ul li a:hover, nav ul li a.active {
   color: #e6ca3a;
   border-top-right-radius: 3.5rem;
   border-bottom-left-radius: 3.5rem;
   box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 2.6vw 0.1vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7; }
+
+nav ul li a span {
+  margin-left: 26%;
+  display: inline;
+  text-align: left; }
 
 .user-info {
   flex-grow: 1;
@@ -316,16 +317,6 @@ nav li a:hover {
 .leaderboard-card__body {
   width: 60%; }
 
-.leaderboard-card__avatar {
-  position: relative;
-  width: 25%; }
-
-.leaderboard-card__avatar img {
-  transform: translate(-50%, -50%);
-  position: absolute;
-  left: 50%;
-  top: 50%; }
-
 .leaderboard-card__body__username {
   height: 30%;
   display: flex;
@@ -352,9 +343,6 @@ nav li a:hover {
 .leaderboard-card__body__question-totals li:first-child {
   margin-bottom: 20px; }
 
-.leaderboard-card__body__question-totals li:last-child {
-  margin-top: 20px; }
-
 .leaderboard-card__body__question-totals li:first-child:after {
   content: "";
   box-shadow: inset 1px 0px 1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #728ee9, 0 0 0vw 0.4vw #210be5, 0 0 3vw 1.4vw #210be5, inset 0 0 0.4vw 0.2vw #728ee9, inset 0 0 0.5vw 0.2vw #ffffff;
@@ -367,6 +355,19 @@ nav li a:hover {
   border-radius: 6px;
   transform: translate(-50%, 0px);
   z-index: -1; }
+
+.leaderboard-card__body__question-totals li:last-child {
+  margin-top: 20px; }
+
+.leaderboard-card__avatar {
+  position: relative;
+  width: 25%; }
+
+.leaderboard-card__avatar img {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%; }
 
 .leaderboard-card__score {
   flex-grow: 1;
@@ -474,11 +475,9 @@ nav li a:hover {
 /* card */
 .card {
   width: 80%;
-  margin: 75px auto; }
-
-.card__preview p {
-  color: white;
-  letter-spacing: 3px; }
+  margin: 75px auto;
+  /* card preview */
+  /* card answers */ }
 
 .card__title {
   overflow: hidden;
@@ -531,14 +530,18 @@ nav li a:hover {
   box-shadow: inset 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.2vw #e97272, 0 0 0vw 0vw #e50b0b, 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
   z-index: -1; }
 
+.card__preview p {
+  color: white;
+  letter-spacing: 3px; }
+
 .card__answers__list {
   width: 80%;
   margin: 0 auto 25px; }
 
-.card__answers__list li input {
+.card__answers li input {
   width: 20px; }
 
-.card__answers__list li label {
+.card__answers li label {
   display: inline-block;
   text-align: left;
   letter-spacing: 2px;
@@ -554,6 +557,13 @@ nav li a:hover {
   display: block;
   font-family: "starwars-big", sans-serif;
   padding: 25px; }
+
+.card_answer_result {
+  border: 2px solid;
+  width: 85%;
+  margin: 20px auto;
+  border-radius: 10px;
+  position: relative; }
 
 .card_answer_result__percentage {
   height: 25px;
@@ -573,21 +583,14 @@ nav li a:hover {
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.card_answer_result {
-  border: 2px solid;
-  width: 85%;
-  margin: 20px auto;
-  border-radius: 10px;
-  position: relative; }
-
 .card_answer_result__percentage div {
   background-color: #60ac5d;
   height: inherit; }
 
 .badge {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   background: black;
   border: 1px solid #e6ca3a;
   border-radius: 50px;

@@ -9,7 +9,7 @@ body {
   padding: 0;
   font-family: "starwars-big", sans-serif;
   background: url("http://www.ultradrive.com/images/rdx_starfield.jpg");
-  color: #e6ca3a;
+  color: $yellow;
   letter-spacing: 1px;
 }
 
@@ -22,30 +22,6 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-/* utils */
-.float-left {
-  float: left;
-}
-
-.circle-image {
-  border-radius: 100px;
-}
-
-.avatar-small {
-  width: 60px;
-  height: 60px;
-}
-
-.avatar-medium {
-  width: 100px;
-  height: 100px;
-}
-
-.answer {
-  background: darkseagreen;
-  border-color: #2e7d32;
 }
 
 .App {

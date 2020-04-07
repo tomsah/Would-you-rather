@@ -3,55 +3,54 @@
   width: 70%;
   margin: 0 auto;
   padding-top: 10px;
-}
+    h2 {
+      margin: 30px auto;
+    }
 
-.new-question h2 {
-  margin: 30px auto;
-}
+  &__body {
+    padding: 10px 50px 50px;
+    position: relative;
+    letter-spacing: 2px;
+    font-size: 20px;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 1px;
+      top: 0;
+      width: 99%;
+      z-index: -1;
+      box-shadow: 0px 1px 0.1vw 0.15vw #fff7f7, 0 0 1vw 0.2vw #72e97a,
+      0 0 2vw 0.4vw #0be524, inset 0 0 0.5vw 0.1vw #0be524,
+      inset 0 0 0.4vw 0.2vw #72e97a, inset 0 0 0.5vw 0.2vw #fff7f7;
+    }
 
-.new-question__body {
-  padding: 10px 50px 50px;
-  position: relative;
-  letter-spacing: 2px;
-  font-size: 20px;
-}
+    &__meta {
+      margin: 10px 0;
+    }
 
-.new-question__body:before {
-  content: "";
-  position: absolute;
-  left: 1px;
-  top: 0;
-  width: 99%;
-  z-index: -1;
-  box-shadow: 0px 1px 0.1vw 0.15vw #fff7f7, 0 0 1vw 0.2vw #72e97a,
-  0 0 2vw 0.4vw #0be524, inset 0 0 0.5vw 0.1vw #0be524,
-  inset 0 0 0.4vw 0.2vw #72e97a, inset 0 0 0.5vw 0.2vw #fff7f7;
-}
-
-.new-question__body__meta {
-  margin: 10px 0;
-}
-
-.new-question__body form input {
-  display: block;
-  margin: 5px 0;
-  width: 100%;
-  height: 25px;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  font-family: "starwars", sans-serif;
-  color: black;
-  letter-spacing: 1px;
-}
-
-.new-question__body form button {
-  background: transparent;
-  border: none;
-  padding: 25px;
-  margin-top: 50px;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 18px;
-  font-family: "starwars-big", sans-serif;
+    form {
+      input {
+        display: block;
+        margin: 5px 0;
+        width: 100%;
+        height: 25px;
+        border: none;
+        padding: 10px;
+        border-radius: 10px;
+        font-family: "starwars", sans-serif;
+        color: black;
+        letter-spacing: 1px;
+      }
+      button {
+        background: transparent;
+        border: none;
+        padding: 25px;
+        margin-top: 50px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: "starwars-big", sans-serif;
+      }
+    }
+  }
 }
