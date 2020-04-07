@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import CardBodyUnanswered from './CardBodyUnanswered'
 import CardBodyAnswered from './CardBodyAnswered'
-import { handleAnsweredQuestion } from '../actions/questions'
+import { handleAnsweredQuestion } from '../../actions/questions'
 import CardBodyPreview from './CardBodyPreview'
 
 class Card extends Component {

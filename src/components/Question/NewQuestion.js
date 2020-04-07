@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Redirect } from 'react-router-dom'
 
-import { handleCreateQuestion } from "../actions/questions";
+import { handleCreateQuestion } from "../../actions/questions";
 
 class NewQuestion extends Component {
   state = {

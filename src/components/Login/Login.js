@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect  } from 'react-redux'
 
-import{ setLoggedInUser } from '../actions/loggedInUser'
+import{ setLoggedInUser } from '../../actions/loggedInUser'
 
 class Login extends Component{
 

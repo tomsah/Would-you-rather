@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { logoutUser } from '../actions/loggedInUser'
+import { logoutUser } from '../../actions/loggedInUser'
 import { connect} from 'react-redux'
 import { NavLink } from 'react-router-dom'
 

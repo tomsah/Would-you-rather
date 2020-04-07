@@ -1,0 +1,45 @@
+/* dashboard */
+.dashboard {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid darkgrey;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dashboard__nav {
+  border-bottom: 1px solid darkgrey;
+}
+
+.dashboard__nav ul {
+  height: 65px;
+  display: flex;
+}
+
+.dashboard__nav li {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  letter-spacing: 2px;
+  font-family: "starwars-big", sans-serif;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dashboard__nav li:first-child {
+  border-top-left-radius: 1.5rem;
+}
+
+.dashboard__nav li:last-child {
+  border-top-right-radius: 1.5rem;
+}
+
+.dashboard__nav li.active {
+  box-shadow: 0 0 5px #fff, 0 0 8px #fff, 1px 1px 5px #fff,
+  -1px 4px 20px 0px blue, 0px 15px 20px blue;
+  font-size: 20px;
+}
+
+.dashboard__container {
+  margin: 40px auto;
+}

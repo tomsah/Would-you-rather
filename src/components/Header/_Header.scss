@@ -1,0 +1,108 @@
+/* Header.jsx */
+header {
+  margin-bottom: 75px;
+  height: 75px;
+  border-bottom: 2px solid green;
+  display: flex;
+  position: relative;
+  padding-top: 20px;
+}
+
+header:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  box-shadow: inset 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.3vw #e97272,
+  0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b,
+  inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
+}
+
+nav {
+  width: 55%;
+}
+
+nav ul {
+  display: flex;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+nav li {
+  flex: 1 1 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 2.5rem;
+  border-top-right-radius: 3.5rem;
+  height: auto;
+}
+
+nav li a {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 80%;
+  left: 5%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  word-spacing: 100px;
+  letter-spacing: 2px;
+}
+
+nav li a span {
+  margin-left: 26%;
+  display: inline;
+  text-align: left;
+}
+
+nav li:first-child a span {
+  text-align: center;
+  margin-left: 0;
+}
+
+nav li a.active,
+nav li a:hover {
+  color: #e6ca3a;
+  border-top-right-radius: 3.5rem;
+  border-bottom-left-radius: 3.5rem;
+  box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272,
+  0 0 2.6vw 0.1vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b,
+  inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
+}
+
+
+
+.user-info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  height: 100%;
+}
+.user-info span {
+  width: 35%;
+  font-size: 14px;
+}
+
+.user-info img {
+  margin: 0 5%;
+}
+.user-info button {
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  background: transparent;
+  font-family: "starwars-big", sans-serif;
+  padding: 0;
+  width: 150px;
+  margin: 0;
+  height: 45px;
+}
