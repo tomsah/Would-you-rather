@@ -4,7 +4,26 @@ In the "Would You Rather?" Project, you'll build a web app that lets a user play
 
 In your app, users will be able to answer questions, see which questions they haven’t answered, see how other people have voted, post questions, and see the ranking of users on the leaderboard.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+this app was build using
+  > [Create React App](https://github.com/facebookincubator/create-react-app)  
+  > [React Router](https://github.com/ReactTraining/react-router)
+  > [Redux](https://github.com/reduxjs/redux)
+
+
+# Installing
+#### Prerequisites
+* [Git](https://git-scm.com/downloads)
+* [npm](https://www.npmjs.com/get-npm)
+* [Node.js](https://nodejs.org/en/) >= 6.x
+
+1. In Terminal, clone the git project using `$ git clone https://github.com/tomsah/MyReads.git`.
+2. Navigate to the root directory for the project.
+3. Run the command `npm install` to install the necessary dependencies
+3. Run the command `npm start` to start the server. This will automatically open the website in your browser.
+
+
+
+
 
 ## Folder Structure
 
