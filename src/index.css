@@ -1,10 +1,10 @@
 @font-face {
   font-family: "starwars-big";
-  src: local("starwars-big"), url("./font/star-jedi/Starjhol.ttf") format("truetype"); }
+  src: url(~/font/star-jedi/Starjhol.ttf) format("truetype"); }
 
 @font-face {
   font-family: "starwars";
-  src: local("starwars"), url("./font/STARWARS/STARWARS.TTF") format("truetype"); }
+  src: url(~/font/STARWARS/starwars.ttf) format("truetype"); }
 
 /* color */
 /* Neon border */
@@ -458,7 +458,6 @@ nav ul li a span {
   border: none;
   padding: 10px;
   border-radius: 10px;
-  font-family: "starwars", sans-serif;
   color: black;
   letter-spacing: 1px; }
 
