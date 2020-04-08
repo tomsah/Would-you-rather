@@ -17,8 +17,9 @@ class App extends Component {
   componentDidMount () {
     const { dispatch } = this.props
       dispatch(handleInitialData())
-
   }
+
+
 
   render() {
     const { loggedIn } = this.props
@@ -32,7 +33,7 @@ class App extends Component {
                   <Header/>
                   <Switch>
                     <Route path='/' exact component={QuestionsDashboard} />
-                    <Route path='/question/:id' exact component={QuestionPage} />
+                    <Route path='/question/:id'  render={(props) =>  <QuestionPage {...props}/> }/>
                     <Route path='/add' component={NewQuestion} />
                     <Route path='/leaderboard' component={LeaderBoard} />
                     <Route component={NotFound}/>
@@ -49,9 +50,10 @@ class App extends Component {
   }
 }
 
-function mapStateToProps ({loggedInUser}) {
+function mapStateToProps ({loggedInUser, questions}) {
   return {
-    loggedIn: loggedInUser !== null
+    loggedIn: loggedInUser !== null,
+    questionsId: Object.keys(questions)
   }
 }
 

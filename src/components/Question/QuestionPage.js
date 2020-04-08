@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
+import { Redirect }  from 'react-router-dom'
 import { connect } from 'react-redux'
 import Card from '../Card/Card'
+import NotFound from '../NotFound/NotFound'
 
 class QuestionPage extends Component {
   render() {
-    const {id} = this.props
+    const {id, questionsId} = this.props
+    if(!questionsId.includes(id)) {
+      return <Redirect to="/notFound" component={NotFound}/>
+    }
     return (
       <div>
         <Card id={id} />
@@ -17,7 +22,8 @@ function mapStateToProps({questions}, props) {
   const {id} = props.match.params
   return{
     id,
-    questions
+    questions,
+    questionsId : Object.keys(questions)
   }
 }
 
